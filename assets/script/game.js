@@ -6,39 +6,55 @@ function getRandom(min, max) {
   }
 
 function play(playerChoice){
-  //var compChoice = "rock";
+    var resultsElem = document.getElementById('results');
+    var compChoiceElem = document.getElementById('compChoice')
+    //var compChoice = "rock";
 //
   var compChoice = (getRandom(1, 3));
-
-  alert (compChoice);
+var compChoiceName = "";
   if ((playerChoice) == (compChoice)){
-      return alert("It's a draw");
+      res = ("It's a draw");
   } 
   else if
   (playerChoice == 1 && compChoice == 2){
-      return alert("Computer Wins!!!")
+       res = ("Computer Wins!!!")
   }
   else if 
   (playerChoice == 1 && compChoice == 3){
-return alert("Player Wins!!!")
+    res = ("Player Wins!!!")
   }
   else if
   (playerChoice == 2 && compChoice == 1){
-      return alert("Player Wins!!!")
+    res = ("Player Wins!!!")
   }
   else if
   (playerChoice == 2 && compChoice == 3){
-      return alert("Computer Wins!!!")
+    res = ("Computer Wins!!!")
   }
   else if
   (playerChoice == 3 && compChoice == 1){
-      return alert("Player Wins!!!")
+    res = ("Player Wins!!!")
   }
   else if
   (playerChoice == 3 && compChoice == 2){
-      return alert("Computer Wins!!!!")
+      res = ("Computer Wins!!!!")
   }
-  
+
+if (compChoice == 1) {
+    compChoiceName = "Rock"
+}
+if (compChoice == 2) {
+    compChoiceName = "Paper"
+}
+if (compChoice == 3) {
+    compChoiceName = "Scissors"
+}
+
+{
+    //debugger
+    compChoiceElem.innerHTML = `<p> The Computer has chosen <em>"${compChoiceName}"</em></p>`
+    resultsElem.innerHTML = `<h2>${res}</h2>`
+}
 
 //   if (playerChoice == "paper") {
 //       return alert("Player Wins");
